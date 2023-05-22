@@ -1,1 +1,24 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>{% block title %} Blog {% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    
+    <div id="content">
+        {% block content %}
+        <h1>Welcome to your blog</h1>
+        <div  id="register">
+            <form action="/login" method="get">
+                <button type="submit" class="setup">Login</button>
+            </form>
+            <form action="/register" method="get">
+                <button type="submit" class="setup">Register</button>
+            </form>
+        </div>
+        {% endblock %}</div>
+</body>
+</html>
