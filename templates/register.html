@@ -1,1 +1,14 @@
-
+{% extends "home.html" %}
+{% block title %}Register{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/style.css" />
+{% endblock %}
+{% block content %}
+<form action="/register" method="post">
+    <p>Register with a Username and Password</p>
+    Username: <input type="text" name="username" id="username">
+    Author Name: <input type="text" name="author" id="author">
+    Password: <input type="password" name="password" id="password">
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
