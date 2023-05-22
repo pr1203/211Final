@@ -1,1 +1,70 @@
 
+
+
+@font-face {
+    font-family: 'Arial' ;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+body{
+    margin: 0;
+    background-color: rgb(0, 2, 139);
+
+}
+
+h1, h2, h3, h4{
+    font-family: 'Arial';
+}
+
+#content{
+    display: grid;
+    margin: 2em;
+    justify-content: center;
+    background-color: white;
+    
+}
+
+#register{
+    display: grid;
+    justify-content: center;
+
+}
+
+.setup{
+    height: 4em;
+    width: 10em;
+    object-fit: contain;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 0.5em;
+    border: rgb(0, 2, 139);
+    padding: 1em;
+    margin: 1em;
+    border-style: solid;
+    
+}
+
+input, textarea{
+    border-radius: 0.5em;
+    border: rgb(0, 2, 139);
+    padding: 0.5em;
+    border-style: solid;
+}
+
+.login{
+    padding: 1em;
+}
+
+.new_post{
+    padding: 1em;
+}
+
+.register>input{
+    
+    margin: 1em;
+   
+}
+
+form{
+    align-items: center;
+    justify-content: center;
+}
