@@ -3,15 +3,34 @@
 <head>
     {% block head %}
     <link rel="stylesheet" href="/static/style.css" />
+    <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(0, 2, 139);
+    }
+    
+    #content {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    button.setup {
+      margin-top: 10px;
+    }
+    </style>
     <title>{% block title %} Blog {% endblock %}</title>
     {% endblock %}
 </head>
 <body>
-    
     <div id="content">
         {% block content %}
         <h1>Welcome to your blog</h1>
-        <div  id="register">
+        <div id="register">
             <form action="/login" method="get">
                 <button type="submit" class="setup">Login</button>
             </form>
@@ -19,6 +38,7 @@
                 <button type="submit" class="setup">Register</button>
             </form>
         </div>
-        {% endblock %}</div>
+        {% endblock %}
+    </div>
 </body>
 </html>
