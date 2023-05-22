@@ -1,1 +1,14 @@
-
+{% extends "home.html" %}
+{% block title %}{{ fetch[1] }}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/style.css" />
+{% endblock %}
+{% block content %}
+<div class="register">
+    <h1>{{fetch[1]}}</h1>
+    <h2>By:{{fetch[4]}}</h2>
+    <h3>{{fetch[3]}}</h3>
+    <p>{{fetch[2]}}</p>
+    <a href="/dashboard">Back to home</a> 
+</div>  
+{% endblock %}
