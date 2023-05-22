@@ -1,1 +1,35 @@
+{% extends "home.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/style.css" />
+<style>
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.login {
+  background-color: white;
+  padding: 20px;
+}
+
+button {
+  padding: 8px 18px;
+  font-size: 14px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="login-container">
+  <div class="login">
+    <form action="/login" method="post">
+      Username: <input type="text" name="username" id="username">
+      Password: <input type="password" name="password" id="password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
 
