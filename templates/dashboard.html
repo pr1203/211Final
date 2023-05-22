@@ -1,1 +1,91 @@
+{% extends "home.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/style.css" />
+<style>
+.button-container {
+  text-align: right;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 6px 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 175%;
+}
+
+th, td {
+  border: 3px solid #ddd;
+  padding: 40px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.table-row td:first-child {
+  width: 30%;
+}
+
+.table-row td:nth-child(2) {
+  width: 30%;
+}
+
+.table-row td:nth-child(3),
+.table-row td:nth-child(4),
+.table-row td:last-child {
+  width: 20%;
+}
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="button-container">
+  <form action="/logout" method="post">
+      <button type="submit">Logout</button>
+  </form>
+</div>
+<h1>Dashboard</h1>
+<div class="table-container">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Post</th>
+      <th>Date Posted</th>
+      <th>Author</th>
+      <th>Edit</th>
+    </tr>
+    {% for post in posts %}
+      <tr class="table-row">
+        <td data-id="{{ post[0] }}"><a href="/post/{{ post[0] }}">{{ post[1] }}</a></td>
+        <td>{{ post[2]|truncate(20) }}</td>
+        <td>{{ post[3] }}</td>
+        <td>{{ post[4] }}</td>
+        <td data-id="{{ post[0] }}">
+          <form action="/post/{{ post[0] }}/edit" method="get">
+            <button type="submit">Edit</button>
+          </form>
+          <form action="/post/{{ post[0] }}/delete" method="post">
+            <button>Delete</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+<form action="/new_post" method="get">
+    <button type="submit">New Post</button>
+</form>
+{% endblock %}
 
