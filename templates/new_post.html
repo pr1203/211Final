@@ -1,1 +1,47 @@
+{% extends "home.html" %}
+{% block title %}New Post{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/style.css" />
+<style>
+.new_post {
+  text-align: center;
+}
+
+.new_post form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.new_post form input,
+.new_post form textarea {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.new_post form button {
+  padding: 10px 20px;
+}
+
+.new_post a {
+  display: block;
+  text-align: center;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="new_post">
+    <form action="/new_post" method="post">
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+        <textarea name="post" id="" cols="30" rows="10"></textarea>
+        <button type="submit">Post</button>
+    </form>
+    <a href="/dashboard">Back to home</a> 
+</div>
+{% endblock %}
 
