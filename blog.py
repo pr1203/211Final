@@ -1,3 +1,4 @@
+
 from logging import debug
 from os import environ, urandom
 from flask import Flask, redirect, render_template, g, request, session, url_for, Blueprint, flash
